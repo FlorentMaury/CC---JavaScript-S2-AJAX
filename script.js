@@ -1,9 +1,10 @@
 // Déclaration des variables.
-let button        = document.querySelector('.main__button');
-let img           = document.querySelector('.main__img');
-let select        = document.querySelector('.main__select');
-let selectedBreed = '';
-img.style.display = 'none';
+let button           = document.querySelector('.main__button');
+let img              = document.querySelector('.main__img');
+let select           = document.querySelector('.main__select');
+let selectedBreed    = '';
+img.style.display    = 'none';
+button.style.display = 'none';
 
 // On récupère la liste des races de chiens de l'API.
 let urlList = 'https://dog.ceo/api/breeds/list/all';
@@ -33,6 +34,16 @@ select.addEventListener('change', () => {
         .then(response => response.json())
         .then(response => {
             img.src = response.message;
-            img.style.display = 'block';
+            img.style.display    = 'block';
+            button.style.display = 'block';
         });
+});
+
+// On surveille les clics sur le bouton des favoris.
+button.addEventListener('click', () => {
+    if (img.style.display === 'block') {
+        let favorite = document.createElement('img');
+        favorite.src = img.src;
+        document.querySelector('.favorites__img').appendChild(favorite);
+    }
 });

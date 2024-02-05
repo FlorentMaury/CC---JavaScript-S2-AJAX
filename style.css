@@ -1,30 +1,46 @@
 .main {
-    font-family: Arial, sans-serif;
-    display: flex;
+    font-family    : Arial, sans-serif;
+    display        : flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    align-items    : center;
+    flex-direction : column;
 }
-
 
 .main__square {
-    width: 80%;
-    height: 500px;
+    width           : 80%;
+    height          : 500px;
     background-color: rgb(64, 159, 242);
 }
 
-.main__select {
+.main__select,
+.main__button {
     background-color: rgb(64, 159, 242);
-    color: white;
-    padding: 10px;
-    border: none;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
+    color           : white;
+    padding         : 10px;
+    border          : none;
+    margin-top      : 20px;
+    cursor          : pointer;
+    border-radius   : 5px;
 }
 
 .main__img {
-    width: 100%;
-    height: 100%;
+    width     : 100%;
+    height    : 100%;
     object-fit: contain;
+}
+
+.favorites {
+    margin: 30px;
+}
+
+.favorites__h2 {
+    color: rgb(64, 159, 242);
+}
+
+.favorites__img {
+    width     : 100px;
+    height    : 100px;
+    object-fit: contain;
+    margin    : 10px;
+    display   : flex;
 }
