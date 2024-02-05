@@ -10,10 +10,10 @@ let urlList = 'https://dog.ceo/api/breeds/list/all';
 fetch(urlList)
     .then(response => response.json())
     .then(response => {
-        for (let propriete in response.message) {
+        for (let property in response.message) {
             let option = document.createElement('option');
-            option.value = propriete;
-            option.text = propriete;
+            option.value = property;
+            option.text = property;
             select.add(option);
         }
     });
