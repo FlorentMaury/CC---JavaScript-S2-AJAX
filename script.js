@@ -1,25 +1,34 @@
-let button = document.querySelector('.main__button');
-let img    = document.querySelector('.main__img');
-
+let button        = document.querySelector('.main__button');
+let img           = document.querySelector('.main__img');
+let select        = document.querySelector('.main__select');
+let selectedBreed = '';
 img.style.display = 'none';
 
-let url = 'https://dog.ceo/api/breeds/image/random';
 
-button.addEventListener('click', () => {
+let urlList = 'https://dog.ceo/api/breeds/list/all';
 
-    if (img.style.display === 'none') {
-        fetch(url)
+fetch(urlList)
+    .then(response => response.json())
+    .then(response => {
+        for (let propriete in response.message) {
+            let option = document.createElement('option');
+            option.value = propriete;
+            option.text = propriete;
+            select.add(option);
+        }
+    });
+
+
+
+select.addEventListener('change', () => {
+    selectedBreed = select.value;
+
+    let url = 'https://dog.ceo/api/breed/' + selectedBreed + '/images/random';
+
+    fetch(url)
         .then(response => response.json())
         .then(response => {
             img.src = response.message;
             img.style.display = 'block';
-            button.textContent = 'Faire disparaitre le chien.';
-
         });
-    } else {
-        img.style.display = 'none';
-        button.textContent = 'Faire apparaître un chien.';
-    }
-
-
 });
