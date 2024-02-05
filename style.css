@@ -1,0 +1,30 @@
+.main {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.main__square {
+    width: 80%;
+    height: 500px;
+    background-color: rgb(64, 159, 242);
+}
+
+.main__button {
+    background-color: rgb(64, 159, 242);
+    color: white;
+    padding: 10px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
