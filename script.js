@@ -49,3 +49,66 @@ button.addEventListener('click', () => {
     favorite.src = img.src;
     document.querySelector('.favorites__img').appendChild(favorite);
 });
+
+
+
+
+
+
+// CORRECTION 
+
+
+// let button = document.querySelector('#btnDog');
+// let select = document.querySelector('#breedSelect');
+
+// button.addEventListener('click', displayDog);
+
+// onInit();
+// async function onInit() {
+//     const breeds = await getBreeds();
+//     addBreedsToSelect(breeds);
+
+//     // getBreeds().then(breeds => {
+//     //     addBreedsToSelect(breeds);
+//     // });
+// };
+
+// function setUrl() {
+//     const breed = select.value;
+//     if (breed != "") {
+//         return "https://dog.ceo/api/breed/" + breed + "/images/random";
+//     } else {
+//         return 'https://dog.ceo/api/breeds/image/random';
+//     };
+// };
+
+// function displayDog() {
+//     const url = setUrl();
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(response => {
+//                 let imageDog = document.querySelector('.contain-img');
+//                 imageDog.style.backgroundImage = `url(${response.message})`;
+//             });
+// };
+
+// async function getBreeds() {
+//     const response = await fetch('https://dog.ceo/api/breeds/list/all');
+//     const data = await response.json();
+//     return data.message;
+
+//     // fetch('https://dog.ceo/api/breeds/list/all')
+//     //     .then(response => response.json())
+//     //     .then(response => {
+//     //         return response.message;
+//     //     });
+// };
+
+// function addBreedsToSelect(breeds) {
+//     for (const property in breeds) {
+//         const option = document.createElement('option');
+//         option.value = property;
+//         option.textContent = property;
+//         select.appendChild(option);
+//     };
+// };
